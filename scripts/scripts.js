@@ -299,8 +299,6 @@ $('#submit').on('click', function() {
     }
 })
 
-const mobileWidthMediaQuery = window.matchMedia('(max-width: 769px)')
-
 $('.number_error').hover(function() {
     $('.number_error').css('display', 'none');
 })
@@ -316,15 +314,14 @@ $('.burger').on('click', function() {
 })
 
 $('.menu_link').on('click', function() {
-    if (mobileWidthMediaQuery.matches) {
-        $('.menu').css('display', 'none');
-    }
+    $('.menu').css('display', 'none');
 })
 
 $('.close').on('click', function() {
     $('.menu').css('display', 'none');
 })
 
+const mobileWidthMediaQuery = window.matchMedia('(max-width: 769px)')
 mobileWidthMediaQuery.addEventListener('change', function () {
     if (!mobileWidthMediaQuery.matches) {
         $('.menu').css('display', 'flex');
